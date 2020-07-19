@@ -220,16 +220,107 @@ export class TagInput extends React.Component<ITagInputProps, ITagInputState> {
                             {
                                 this.state.addTags &&
                                 <div className="tag-input-text-input-row new-tag-input">
-                                    <input
+                                    <select
                                         className="tag-input-box"
-                                        type="text"
+                                        //type="select"
                                         onKeyDown={this.onAddTagKeyDown}
                                         // Add mouse event
                                         onBlur={this.onAddTagWithBlur}
-                                        placeholder="Add new tag"
+                                        placeholder="Add new tag2"
                                         autoFocus={true}
-                                        ref={this.inputRef}
-                                    />
+                                       // ref={this.inputRef}
+                                    >
+                                            <option>SupplierName</option>
+                                            <option>SupplierAddress</option>
+                                            <option>SupplierVATNo</option>
+                                            <option>SupplierBankDetails</option>
+                                            <option>DocumentType</option>
+                                            <option>SectorType</option>
+                                            <option>DocumentNo</option>
+                                            <option>DocumentDate</option>
+                                            <option>ServiceStartDate</option>
+                                            <option>ServiceEndDate</option>
+                                            <option>ServiceLineitems</option>
+                                            <option>TaxType</option>
+                                            <option>ExclTaxAmount</option>
+                                            <option>TaxAmount</option>
+                                            <option>InclTaxAmount</option>
+                                            <option>ServiceDurationDays</option>
+                                            <option>BilledToParty</option>
+                                            <option>ShipToParty</option>
+                                            <option>BusinessUnit</option>
+                                            <option>CostCenter</option>
+                                            <option>TotalExcl</option>
+                                            <option>TotalIncl</option>
+                                            <option>TotalTax</option>
+                                            <option>PONumber</option>
+                                            <option>AmountPaid</option>
+                                            <option>BalanceAmount</option>
+                                            <option>SupplierContactNumber</option>
+                                            <option>SupplierEmail</option>
+                                            <option>TransnetVATNo</option>
+                                            <option>MunicipalityName</option>
+                                            <option>PropertyAddress</option>
+                                            <option>Township</option>
+                                            <option>Portion</option>
+                                            <option>ERFNumber</option>
+                                            <option>MunicipalAccountNumber</option>
+                                            <option>MunicipalValuation</option>
+                                            <option>StandSize</option>
+                                            <option>RatesDescription</option>
+                                            <option>RatesAmount</option>
+                                            <option>RatesRebate</option>
+                                            <option>RefuseDescription</option>
+                                            <option>RefuseConsumption</option>
+                                            <option>RefuseAmount</option>
+                                            <option>RefuseRebate</option>
+                                            <option>SewerageDescription</option>
+                                            <option>SewerageConsumption</option>
+                                            <option>SewerageAmount</option>
+                                            <option>SewerageRebate</option>
+                                            <option>WaterDescription</option>
+                                            <option>WaterConsumption</option>
+                                            <option>WaterAmount</option>
+                                            <option>WaterRebate</option>
+                                            <option>ElectricityDescription</option>
+                                            <option>ElectricityConsumption</option>
+                                            <option>ElectricityAmount</option>
+                                            <option>ElectricityRebate</option>
+                                            <option>OpeningBalance</option>
+                                            <option>ClosingBalance</option>
+                                            <option>InterestOnArrears</option>
+                                            <option>IncomingPayment</option>
+                                            <option>AmountPayable</option>
+                                            <option>CurrentAmount</option>
+                                            <option>VendorName</option>
+                                            <option>FirstDateOfTravel</option>
+                                            <option>OrderNum</option>
+                                            <option>CompanyName</option>
+                                            <option>CompanyCode</option>
+                                            <option>BusinessUnit</option>
+                                            <option>BusinessCode</option>
+                                            <option>Location</option>
+                                            <option>CostCenterDescription</option>
+                                            <option>CostCentreCode</option>
+                                            <option>PartNumber</option>
+                                            <option>GLCode</option>
+                                            <option>Currency</option>
+                                            <option>CountryOfBooking</option>
+                                            <option>NonTaxableAirTax</option>
+                                            <option>TaxableAirTaxIncl</option>
+                                            <option>Description</option>
+                                            <option>CardNum</option>
+                                            <option>TicketNumber</option>
+                                            <option>Pax</option>
+                                            <option>DomInt</option>
+                                            <option>IDNumber</option>
+                                            <option>EmployeeNumber</option>
+                                            <option>Approver</option>
+                                            <option>TripName</option>
+                                            <option>ReasonForTravel</option>
+                                            <option>ApprovalComment</option>
+                                            <option>InvoiceUrl</option>
+                                        </select>
                                     <FontIcon iconName="Tag" />
                                 </div>
                             }

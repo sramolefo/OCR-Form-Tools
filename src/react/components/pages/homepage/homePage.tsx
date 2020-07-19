@@ -28,6 +28,9 @@ import { toast } from "react-toastify";
 import { isElectron } from "../../../../common/hostProcess";
 import ProjectService from "../../../../services/projectService";
 
+import {Router, ActivatedRoute, Params} from '@angular/router';
+import {OnInit, Component} from '@angular/core';
+
 export interface IHomePageProps extends RouteComponentProps, React.Props<HomePage> {
     recentProjects: IProject[];
     connections: IConnection[];
@@ -59,8 +62,42 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
+
+/*export class MyComponent implements OnInit {
+
+    constructor(private activatedRoute: ActivatedRoute) {}
+  
+    ngOnInit() {
+      // Note: Below 'queryParams' can be replaced with 'params' depending on your requirements
+      this.activatedRoute.paramMap.subscribe(params => {
+          const sas = params['testvarname'];
+          console.log(sas);
+        });
+    }
+  
+  }*/
+  
 @connect(mapStateToProps, mapDispatchToProps)
-export default class HomePage extends React.Component<IHomePageProps, IHomePageState> {
+export default class HomePage extends React.Component<IHomePageProps, IHomePageState> implements OnInit {
+    
+    constructor(public name: Readonly<any>, private DDroute: ActivatedRoute) {
+        super(name);
+    }
+    ngOnInit(): void {
+        let valueT = this.DDroute.snapshot;
+        console.log("aaa");
+        console.log(valueT);
+    }
+
+   /* private activatedRoute: ActivatedRoute  
+        ngOnInit() {
+          // Note: Below 'queryParams' can be replaced with 'params' depending on your requirements
+          this.activatedRoute.queryParams.subscribe(params => {
+              const sas = params['testvarname'];
+              console.log("aaa");
+              console.log(sas);
+            });
+        };     */ 
 
     public state: IHomePageState = {
         cloudPickerOpen: false,
@@ -73,7 +110,10 @@ export default class HomePage extends React.Component<IHomePageProps, IHomePageS
     private importConfirmRef: React.RefObject<Confirm> = React.createRef();
 
     public async componentDidMount() {
-        this.props.appTitleActions.setTitle("Welcome");
+        this.props.appTitleActions.setTitle("Welcome to FT Training Station - Project123: ");
+        console.log("hello x");
+        this.ngOnInit();
+        console.log("hello w");
         this.newProjectRef.current.focus();
         document.title = strings.homePage.title + " - " + strings.appName;
     }
@@ -98,6 +138,7 @@ export default class HomePage extends React.Component<IHomePageProps, IHomePageS
                         </li>
                         {isElectron() &&
                             <li>
+                                {/* eslint-disable-next-line */}
                                 <a href="#" className="p-5 file-upload"
                                     onClick={() => this.filePicker.current.upload()} >
                                     <FontIcon iconName="System" className="icon-9x" />

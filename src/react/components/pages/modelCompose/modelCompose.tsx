@@ -548,6 +548,7 @@ export default class ModelComposePage extends React.Component<IModelComposePageP
             }));
         } else if (key === strings.modelCompose.column.name.fieldName) {
             return (
+                // eslint-disable-next-line
                 modelList.slice(0).sort((a,b) => {
                     if (a.modelName && b.modelName) {
                         return isSortedDescending ? b.modelName.localeCompare(a.modelName) : -b.modelName.localeCompare(a.modelName)

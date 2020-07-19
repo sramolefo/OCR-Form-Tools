@@ -18,14 +18,6 @@ COPY . .
 # Build the app for production
 RUN yarn build
 
-# Stage 2
-# Use Nginx to serve files
-FROM nginx:1.18.0-alpine
-WORKDIR /usr/src/app
+CMD npm start
 
-COPY --from=build /usr/src/app/run.sh .
-COPY --from=build /usr/src/app/build /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
-COPY --from=build /usr/src/app/nginx.conf /etc/nginx/conf.d/nginx.conf
-EXPOSE 80
-ENTRYPOINT [ "./run.sh" ]
+

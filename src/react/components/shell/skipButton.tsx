@@ -12,6 +12,7 @@ export class SkipButton extends React.Component<ISkipButtonProps> {
     public render() {
         return (
             <div className="skip-button" tabIndex={1}>
+                {/* eslint-disable-next-line */}
                 <a href="#" onClick={this.skipToId}>{this.props.children}</a>
             </div>);
     }

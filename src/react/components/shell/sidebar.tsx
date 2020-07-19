@@ -25,39 +25,11 @@ export function Sidebar({ project }) {
                         <FontIcon iconName="Home" />
                     </NavLink>
                 </li>
-                <li>
-                    <ConditionalNavLink disabled={!projectId}
-                        title={strings.tags.editor}
-                        to={`/projects/${projectId}/edit`}>
-                        <FontIcon iconName="Tag" />
-                    </ConditionalNavLink>
-                </li>
                <li>
                     <ConditionalNavLink disabled={!projectId}
                         title={strings.train.title}
                         to={`/projects/${projectId}/train`}>
                         <FontIcon iconName="MachineLearning" />
-                    </ConditionalNavLink>
-                </li>
-                <li>
-                    <ConditionalNavLink disabled={!projectId}
-                        title={`Model Compose`}
-                        to={`/projects/${projectId}/modelcompose`}>
-                        <FontIcon iconName="combine"/>
-                    </ConditionalNavLink>
-                </li>
-                <li>
-                    <ConditionalNavLink disabled={!projectId}
-                        title={`Analyze`}
-                        to={`/projects/${projectId}/predict`}>
-                        <FontIcon iconName="Insights" />
-                    </ConditionalNavLink>
-                </li>
-                <li>
-                    <ConditionalNavLink disabled={!projectId}
-                        title={strings.projectSettings.title}
-                        to={`/projects/${projectId}/settings`}>
-                        <FontIcon iconName="DocumentManagement" />
                     </ConditionalNavLink>
                 </li>
                 <li>

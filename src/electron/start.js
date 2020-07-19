@@ -44,12 +44,13 @@ const tryConnection = () => client.connect({ port: port }, () => {
         electron.on("disconnect", () => {
             console.log("Electron Process Disconnect");
         });
+        console.log("SR PRD test 123...");
     }
 });
 
 tryConnection();
 
 client.on("error", (error) => {
-    console.log(`Trying to connect to ${process.env.ELECTRON_START_URL}... (start web service with 'yarn react-start')`);
+    console.log(`Trying to connect to ${process.env.ELECTRON_START_URL}... (starting web service with 'yarn react-start')`);
     setTimeout(tryConnection, 10000);
 });
